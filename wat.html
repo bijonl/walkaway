@@ -99,10 +99,6 @@
     <div class="form-section" id="check-section">
       <div class="form-fields">
         <h2>Check the decision</h2>
-        <p>If you take that next step and your concern proves valid, what happens?</p>
-        <p>Consider money, financing, timing, flexibility, operations or reputation. Include anything important that
-          remains
-          uncertain.</p>
         <div class="form-field">
           <span class="field-label">Is the evidence enough to justify the next step?</span>
           <p class="field-description">
@@ -198,22 +194,23 @@
 
           <div class="radio-group">
             <label>
-              <input type="radio" name="pressure" value="low" required>
+              <input type="radio" name="momentum" value="low" required>
               <span>Low</span>
             </label>
 
             <label>
-              <input type="radio" name="pressure" value="present">
+              <input type="radio" name="momentum" value="present">
               <span>Present</span>
             </label>
 
             <label>
-              <input type="radio" name="pressure" value="material">
+              <input type="radio" name="momentum" value="material">
               <span>Material</span>
             </label>
+
           </div>
-
-
+          <br>
+          <em style="display: none" class="material-disclaimer-text">Past effort does not create future merit.</em>
         </div>
       </div>
     </div>
@@ -224,54 +221,57 @@
         <h2>Choose the decision</h2>
         <p>Insert previously selected answers.</p>
         <div class="form-field">
-          <span class="field-label">How much are prior effort, money spent or deadline pressure pushing you
-            forward?</span>
-          <p class="field-description">
-            <em>Low: little influence. <br> Present: some influence. <br>Material: a significant reason for
-              continuing.</em>
-          </p>
+          <span class="field-label">
+            What will you do now?
+          </span>
 
           <div class="radio-group">
             <label>
-              <input type="radio" name="pressure" value="low" required>
+              <input type="radio" name="decision" value="stop" required>
               <span>Stop</span>
             </label>
 
             <label>
-              <input type="radio" name="pressure" value="present">
+              <input type="radio" name="decision" value="continue">
               <span>Continue</span>
             </label>
 
             <label>
-              <input type="radio" name="pressure" value="material">
+              <input type="radio" name="decision" value="require-proof">
               <span>Require More Proof</span>
             </label>
-
-            <p>Alert if they press continue.</p>
           </div>
+          <br>
+          <em style="display: none" class="decision-text-alert"></em>
+        </div>
+        <div class="form-field" id="decision-ff">
+          <label>
+            <span class="field-label">Why is this the right decision now?</span>
+            <textarea id="wat-decision" name="decision-right-now" placeholder="Why?" required></textarea>
+          </label>
         </div>
 
-        <div class="form-field">
+        <div class="form-field" style="display:none" id="conditions-ff">
           <label>
-            <span class="field-label">What conditions apply to continuing? - Trigger on Continue</span>
+            <span class="field-label">What conditions apply to continuing?</span>
             <textarea id="wat-conditions" name="conditions" placeholder="Conditions?" required></textarea>
           </label>
         </div>
 
-        <div class="form-field">
+        <div class="form-field" style="display:none" id="what-proof-ff">
           <label>
             <span class="field-label">What proof or action is needed?</span>
             <input type="text" id="wat-proof" name="proof" placeholder="What proof or action is needed?"
               required></input>
           </label>
         </div>
-        <div class="form-field">
+        <div class="form-field" style="display:none" id="who-proof-ff">
           <label>
             <span class="field-label">Who will obtain it?</input>
               <input type="text" id="wat-who-obtain" name="proof" placeholder="Who will obtain it?" required></input>
           </label>
         </div>
-        <div class="form-field">
+        <div class="form-field" style="display:none" id="when-proof-ff">
           <label>
             <span class="field-label">By when?</span>
             <input type="text" id="wat-when-obtain" name="proof" placeholder="By when?" required></text>
@@ -279,6 +279,87 @@
         </div>
       </div>
     </div>
+
+    <div class="form-section" id="choose-section">
+      <div class="form-fields">
+        <table>
+          <thead>
+            <tr>
+              <th>Record section</th>
+              <th>Content</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Identification and decision</strong></td>
+              <td id="record-identification"></td>
+              <td>
+                <button type="button" id="edit-identification">Edit</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Concern and next step</strong></td>
+              <td id="record-concern"></td>
+              <td>
+                <button type="button" id="edit-concern">Edit</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Evidence</strong></td>
+              <td id="record-evidence"></td>
+              <td>
+                <button type="button" id="edit-evidence">Edit</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Consequence</strong></td>
+              <td id="record-consequence"></td>
+              <td>
+                <button type="button" id="edit-consequence">Edit</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Four checks</strong></td>
+              <td id="record-four-checks"></td>
+              <td>
+                <button type="button" id="edit-four-checks">Edit</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Decision basis</strong></td>
+              <td id="record-decision-basis"></td>
+              <td>
+                <button type="button" id="edit-decision-basis">Edit</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Conditions or proof</strong></td>
+              <td id="record-conditions-proof"></td>
+              <td>
+                <button type="button" id="edit-conditions-proof">Edit</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>Record control</strong></td>
+              <td id="record-control"></td>
+              <td>
+                <button type="button" id="edit-record-control">Edit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
 
     <div class="quiz-navigation">
       <button id="wat-prevBtn" class="app-button disabled">
