@@ -280,7 +280,7 @@
       </div>
     </div>
 
-    <div class="form-section" id="choose-section">
+    <div class="form-section" id="review-section">
       <div class="form-fields">
         <table>
           <thead>
@@ -295,7 +295,7 @@
               <td><strong>Identification and decision</strong></td>
               <td id="record-identification"></td>
               <td>
-                <button type="button" id="edit-identification">Edit</button>
+                <button type="button" class="edit-record-control" data-target="decision-section">Edit</button>
               </td>
             </tr>
 
@@ -303,7 +303,7 @@
               <td><strong>Concern and next step</strong></td>
               <td id="record-concern"></td>
               <td>
-                <button type="button" id="edit-concern">Edit</button>
+                <button type="button" class="edit-record-control" data-target="decision-section">Edit</button>
               </td>
             </tr>
 
@@ -311,7 +311,7 @@
               <td><strong>Evidence</strong></td>
               <td id="record-evidence"></td>
               <td>
-                <button type="button" id="edit-evidence">Edit</button>
+                <button type="button" class="edit-record-control" data-target="evidence-section">Edit</button>
               </td>
             </tr>
 
@@ -319,7 +319,7 @@
               <td><strong>Consequence</strong></td>
               <td id="record-consequence"></td>
               <td>
-                <button type="button" id="edit-consequence">Edit</button>
+                <button type="button" class="edit-record-control" data-target="consequence-section">Edit</button>
               </td>
             </tr>
 
@@ -327,7 +327,7 @@
               <td><strong>Four checks</strong></td>
               <td id="record-four-checks"></td>
               <td>
-                <button type="button" id="edit-four-checks">Edit</button>
+                <button type="button" class="edit-record-control" data-target="check-section">Edit</button>
               </td>
             </tr>
 
@@ -335,7 +335,7 @@
               <td><strong>Decision basis</strong></td>
               <td id="record-decision-basis"></td>
               <td>
-                <button type="button" id="edit-decision-basis">Edit</button>
+                <button type="button" class="edit-record-control" data-target="choose-section">Edit</button>
               </td>
             </tr>
 
@@ -343,7 +343,7 @@
               <td><strong>Conditions or proof</strong></td>
               <td id="record-conditions-proof"></td>
               <td>
-                <button type="button" id="edit-conditions-proof">Edit</button>
+                <button type="button" class="edit-record-control" data-target="choose-section">Edit</button>
               </td>
             </tr>
 
@@ -351,18 +351,22 @@
               <td><strong>Record control</strong></td>
               <td id="record-control"></td>
               <td>
-                <button type="button" id="edit-record-control">Edit</button>
               </td>
             </tr>
           </tbody>
         </table>
+
+        <button id="dk-submitBtn" type="submit" class="app-button">
+          Submit
+        </button>
+
       </div>
     </div>
 
 
 
     <div class="quiz-navigation">
-      <button id="wat-prevBtn" class="app-button disabled">
+      <button id="wat-prevBtn" class="app-button">
         Previous
       </button>
       <button id="wat-nextBtn" class="app-button">
@@ -373,8 +377,5 @@
 
 
 
-    <button id="dk-submitBtn" type="submit" class="app-button">
-      Generate Deal Killers Output
-    </button>
 
     <script src="script.js"></script>

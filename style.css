@@ -238,13 +238,13 @@
     font-weight: bold;
 }
 
-/* .form-section {
+.form-section {
   display: none; 
 }
 
 .form-section.active-section {
   display: block; 
-} */
+}
 
 
 .form-section .form-fields .form-field {
@@ -293,4 +293,33 @@
 
 #justify-ff {
   margin-top: 20px; 
+}
+
+#review-section table {
+  border: solid 1px black; 
+}
+
+#review-section table {
+  border: solid 1px black; 
+}
+
+#review-section table thead tr th {
+  border: solid 1px black; 
+}
+
+#review-section table tbody tr td {
+  border: solid 1px black; 
+  padding: 5px; 
+}
+
+.edit-record-control { 
+    background: transparent;
+    border: 0;
+    color: #104E75;
+    text-decoration: underline;
+}
+
+.quiz-navigation {
+  display: flex; 
+  justify-content: space-between;
 }

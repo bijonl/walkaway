@@ -746,10 +746,10 @@ nextButton.addEventListener('click', (e) => {
         nextSection.classList.add('active-section'); 
         let newActiveSection = document.querySelector('.form-section.active-section');
         if(!newActiveSection.nextElementSibling.classList.contains('form-section')) {
-            nextButton.classList.add('disabled'); 
+            // nextButton.classList.add('disabled'); 
         }
         if(newActiveSection.previousElementSibling.classList.contains('form-section')) {
-            prevButton.classList.remove('disabled'); 
+            // prevButton.classList.remove('disabled'); 
         }
     }
     console.log('next'); 
@@ -765,10 +765,10 @@ prevButton.addEventListener('click', (e) => {
         nextSection.classList.add('active-section'); 
         let newActiveSection = document.querySelector('.form-section.active-section');
          if(newActiveSection.nextElementSibling.classList.contains('form-section')) {
-            nextButton.classList.remove('disabled'); 
+            // nextButton.classList.remove('disabled'); 
         }
         if(!newActiveSection.previousElementSibling.classList.contains('form-section')) {
-            prevButton.classList.add('disabled'); 
+            // prevButton.classList.add('disabled'); 
         }
     }
     console.log('next'); 
@@ -841,10 +841,6 @@ radioButtons.forEach(radio => {
         whoProofFormField.style.display = "none"; 
         whenProofFormField.style.display = "none"; 
     }
-
-
-
-
   });
 });
 
@@ -854,6 +850,8 @@ const recordConcern = document.querySelector('#record-concern');
 const recordEvidence = document.querySelector('#record-evidence'); 
 const recordConsequence = document.querySelector('#record-consequence'); 
 const recordFourChecks = document.querySelector('#record-four-checks'); 
+const recordDecisionBasis = document.querySelector('#record-decision-basis'); 
+const recordConditionsBasis = document.querySelector('#record-conditions-proof'); 
 
 
 // Decision Record and ID
@@ -879,6 +877,61 @@ const evidenceSufficiency = document.querySelectorAll('input[name="evidenceEnoug
 const consequenceClarity = document.querySelectorAll('input[name="wrongConsequence"]');
 const reversibilityAndMomentum = document.querySelectorAll('input[name="undoability"]');
 const sunkCostPressure = document.querySelectorAll('input[name="momentum"]');
+
+// Decision Basis
+const decisionBasis = document.querySelector('#wat-decision');
+
+// Condition or Proofs
+const actionNeeded = document.querySelector('#wat-proof'); 
+const whoObtains = document.querySelector('#wat-who-obtain'); 
+const whenDueDate = document.querySelector('#wat-when-obtain');
+
+const continueConditions = document.querySelector('#wat-conditions');
+
+
+
+
+
+function updateConditions() {
+
+    const selectedDecision = document.querySelector('input[name="decision"]:checked');
+
+    if (!selectedDecision) {
+        return;
+    }
+
+    if (selectedDecision.value === 'continue') {
+        recordConditionsBasis.parentElement.style.display = 'table-row'; 
+
+        recordConditionsBasis.innerHTML = `
+            Condition : ${continueConditions.value} <br>
+        `;
+
+    } else if (selectedDecision.value === 'stop') {
+        recordConditionsBasis.parentElement.style.display = 'none'; 
+
+        recordConditionsBasis.innerHTML = `
+            NA
+        `;
+
+    } else if (selectedDecision.value === 'require-proof') {
+        recordConditionsBasis.parentElement.style.display = 'table-row'; 
+
+
+        recordConditionsBasis.innerHTML = `
+            Action Needed : ${actionNeeded.value} <br>
+            Who Obtains : ${whoObtains.value} <br>
+            Due Date : ${whenDueDate.value} <br>
+        `;
+
+    }
+}
+
+function updateDecisionBasis() {
+    recordDecisionBasis.innerHTML = `
+        ${decisionBasis.value}
+    `;
+}
 
 function updateFourChecks() {
     const selectedEvidence = document.querySelector(
@@ -982,7 +1035,10 @@ dealReference.addEventListener('change', updateIdentification);
 dealOwner.addEventListener('change', updateIdentification);
 dealDate.addEventListener('change', updateIdentification);
 decision.forEach((radio) => {
-    radio.addEventListener('change', updateIdentification);
+    radio.addEventListener('change', () => {
+        updateIdentification();
+        updateConditions();
+    });
 });
 concern.addEventListener('change', updateConcernAndCommitment);
 commitment.addEventListener('change', updateConcernAndCommitment);
@@ -1002,6 +1058,17 @@ reversibilityAndMomentum.forEach((radio) => {
 sunkCostPressure.forEach((radio) => {
     radio.addEventListener('change', updateFourChecks);
 });
+
+decisionBasis.addEventListener('change', updateDecisionBasis); 
+
+actionNeeded.addEventListener('change', updateConditions); 
+whoObtains.addEventListener('change', updateConditions); 
+whenDueDate.addEventListener('change', updateConditions); 
+continueConditions.addEventListener('change', updateConditions); 
+
+
+
+
 
 const recordControl = document.querySelector('#record-control');
 
@@ -1035,3 +1102,16 @@ function updateRecordControl() {
 }
 
 updateRecordControl();
+
+
+const editButtons = document.querySelectorAll('.edit-record-control')
+
+
+editButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        document.querySelector('.form-section.active-section')
+            .classList.remove('active-section');
+        const targetSection = document.getElementById(button.dataset.target);
+        targetSection.classList.add('active-section');
+    });
+});
