@@ -2,14 +2,23 @@
 <script src="https://cdn.jsdelivr.net/npm/pdfkit@0.19.1/js/pdfkit.standalone.min.js"></script>
 
 
-
 <div id="dk-app" class="deal-killers-app">
 
   <form id="dk-form">
+
     <h1>Walk Away Test</h1>
+
+
+    <!-- =====================================================
+         DECISION
+    ====================================================== -->
+
     <div class="form-section active-section" id="decision-section">
+
       <h2>Describe the Decision</h2>
+
       <div class="form-fields">
+
         <div class="form-field">
           <label>
             <span class="field-label">Decision / Deal name</span>
@@ -48,13 +57,31 @@
         </div>
 
       </div>
+
+
+      <div class="section-navigation">
+
+        <button type="button" class="section-next app-button" disabled>
+          Next
+        </button>
+
+      </div>
+
     </div>
 
 
+    <!-- =====================================================
+         EVIDENCE
+    ====================================================== -->
+
     <div class="form-section" id="evidence-section">
+
       <div class="form-fields">
+
         <h2>Put the facts on both sides</h2>
+
         <p>Fill in "Not identified" if the question isn't applicable</p>
+
 
         <div class="form-field">
           <label>
@@ -79,37 +106,94 @@
               placeholder="What important facts are still missing or unverified?"></textarea>
           </label>
         </div>
+
       </div>
+
+
+      <div class="section-navigation">
+
+        <button type="button" class="section-prev app-button">
+          Previous
+        </button>
+
+        <button type="button" class="section-next app-button" disabled>
+          Next
+        </button>
+
+      </div>
+
     </div>
 
+
+    <!-- =====================================================
+         CONSEQUENCE
+    ====================================================== -->
+
     <div class="form-section" id="consequence-section">
+
       <div class="form-fields">
+
         <h2>Describe the consequence</h2>
-        <p>If you take that next step and your concern proves valid, what happens?</p>
-        <p>Consider money, financing, timing, flexibility, operations or reputation. Include anything important that
-          remains
-          uncertain.</p>
+
+        <p>
+          If you take that next step and your concern proves valid, what happens?
+        </p>
+
+        <p>
+          Consider money, financing, timing, flexibility, operations or reputation.
+          Include anything important that remains uncertain.
+        </p>
+
         <div class="form-field">
           <label>
             <span class="field-label">What facts support taking that next step?</span>
             <textarea id="wat-consequence" name="consequence" placeholder="Consequence?"></textarea>
           </label>
         </div>
+
       </div>
+
+
+      <div class="section-navigation">
+
+        <button type="button" class="section-prev app-button">
+          Previous
+        </button>
+
+        <button type="button" class="section-next app-button" disabled>
+          Next
+        </button>
+
+      </div>
+
     </div>
 
+
+    <!-- =====================================================
+         FOUR CHECKS
+    ====================================================== -->
+
     <div class="form-section" id="check-section">
+
       <div class="form-fields">
+
         <h2>Check the decision</h2>
+
+
         <div class="form-field">
-          <span class="field-label">Is the evidence enough to justify the next step?</span>
+
+          <span class="field-label">
+            Is the evidence enough to justify the next step?
+          </span>
+
           <p class="field-description">
             Adequate: enough support to defend the step.<br>
-            Mixed: support exists but important gaps remain. <br>
+            Mixed: support exists but important gaps remain.<br>
             Inadequate: relies mainly on assumptions or missing proof.
           </p>
 
           <div class="radio-group">
+
             <label>
               <input type="radio" name="evidenceEnough" value="adequate">
               <span>Adequate</span>
@@ -124,19 +208,24 @@
               <input type="radio" name="evidenceEnough" value="inadequate">
               <span>Inadequate</span>
             </label>
-          </div>
 
+          </div>
 
         </div>
 
 
         <div class="form-field">
-          <span class="field-label">Do you understand what happens if you are wrong?</span>
+
+          <span class="field-label">
+            Do you understand what happens if you are wrong?
+          </span>
+
           <p class="field-description">
             Judge how clear the consequence is, not how likely it is.
           </p>
 
           <div class="radio-group">
+
             <label>
               <input type="radio" name="wrongConsequence" value="understood">
               <span>Understood</span>
@@ -151,21 +240,26 @@
               <input type="radio" name="wrongConsequence" value="not-understood">
               <span>Not Understood</span>
             </label>
-          </div>
 
+          </div>
 
         </div>
 
 
         <div class="form-field">
-          <span class="field-label">How easily could you undo the next step?</span>
+
+          <span class="field-label">
+            How easily could you undo the next step?
+          </span>
+
           <p class="field-description">
             High: limited loss or constraint.<br>
-            Moderate: meaningful cost or delay. <br>
+            Moderate: meaningful cost or delay.<br>
             Low: difficult to recover money, rights, timing or flexibility.
           </p>
 
           <div class="radio-group">
+
             <label>
               <input type="radio" name="undoability" value="high">
               <span>High</span>
@@ -180,21 +274,28 @@
               <input type="radio" name="undoability" value="low">
               <span>Low</span>
             </label>
-          </div>
 
+          </div>
 
         </div>
 
 
         <div class="form-field">
-          <span class="field-label">How much are prior effort, money spent or deadline pressure pushing you
-            forward?</span>
+
+          <span class="field-label">
+            How much are prior effort, money spent or deadline pressure pushing you forward?
+          </span>
+
           <p class="field-description">
-            <em>Low: little influence. <br> Present: some influence. <br>Material: a significant reason for
-              continuing.</em>
+            <em>
+              Low: little influence.<br>
+              Present: some influence.<br>
+              Material: a significant reason for continuing.
+            </em>
           </p>
 
           <div class="radio-group">
+
             <label>
               <input type="radio" name="momentum" value="low">
               <span>Low</span>
@@ -211,23 +312,54 @@
             </label>
 
           </div>
+
           <br>
-          <em style="display: none" class="material-disclaimer-text">Past effort does not create future merit.</em>
+
+          <em style="display: none" class="material-disclaimer-text">
+            Past effort does not create future merit.
+          </em>
+
         </div>
+
       </div>
+
+
+      <div class="section-navigation">
+
+        <button type="button" class="section-prev app-button">
+          Previous
+        </button>
+
+        <button type="button" class="section-next app-button" disabled>
+          Next
+        </button>
+
+      </div>
+
     </div>
 
 
+    <!-- =====================================================
+         CHOOSE DECISION
+    ====================================================== -->
+
     <div class="form-section" id="choose-section">
+
       <div class="form-fields">
+
         <h2>Choose the decision</h2>
+
         <p>Insert previously selected answers.</p>
+
+
         <div class="form-field">
+
           <span class="field-label">
             What will you do now?
           </span>
 
           <div class="radio-group">
+
             <label>
               <input type="radio" name="decision" value="stop">
               <span>Stop</span>
@@ -242,48 +374,111 @@
               <input type="radio" name="decision" value="require-proof">
               <span>Require More Proof</span>
             </label>
+
           </div>
+
           <br>
-          <em style="display: none" class="decision-text-alert"></em>
+
+          <!-- <em style="display: none" class="decision-text-alert"></em> -->
+
         </div>
+
+
         <div class="form-field" id="decision-ff">
+
           <label>
-            <span class="field-label">Why is this the right decision now?</span>
+            <span class="field-label">
+              Why is this the right decision now?
+            </span>
+
             <textarea id="wat-decision" name="decision-right-now" placeholder="Why?"></textarea>
           </label>
+
         </div>
+
 
         <div class="form-field" style="display:none" id="conditions-ff">
+
           <label>
-            <span class="field-label">What conditions apply to continuing?</span>
+            <span class="field-label">
+              <strong>Before you continue:</strong> What conditions apply to continuing? <br>
+              <br>
+              <em style="display: none; color: red" class="decision-text-alert"></em>
+            </span>
+
             <textarea id="wat-conditions" name="conditions" placeholder="Conditions?"></textarea>
           </label>
+
         </div>
+
 
         <div class="form-field" style="display:none" id="what-proof-ff">
+
           <label>
-            <span class="field-label">What proof or action is needed?</span>
-            <input type="text" id="wat-proof" name="proof" placeholder="What proof or action is needed?"></input>
+            <span class="field-label">
+              What proof or action is needed?
+            </span>
+
+            <input type="text" id="wat-proof" name="proof" placeholder="What proof or action is needed?">
           </label>
+
         </div>
+
+
         <div class="form-field" style="display:none" id="who-proof-ff">
+
           <label>
-            <span class="field-label">Who will obtain it?</input>
-              <input type="text" id="wat-who-obtain" name="whoObtain" placeholder="Who will obtain it?"></input>
+            <span class="field-label">
+              Who will obtain it?
+            </span>
+
+            <input type="text" id="wat-who-obtain" name="whoObtain" placeholder="Who will obtain it?">
           </label>
+
         </div>
+
+
         <div class="form-field" style="display:none" id="when-proof-ff">
+
           <label>
-            <span class="field-label">By when?</span>
-            <input type="text" id="wat-when-obtain" name="whenObtain" placeholder="By when?"></text>
+            <span class="field-label">
+              By when?
+            </span>
+
+            <input type="text" id="wat-when-obtain" name="whenObtain" placeholder="By when?">
+
           </label>
+
         </div>
+
       </div>
+
+
+      <div class="section-navigation">
+
+        <button type="button" class="section-prev app-button">
+          Previous
+        </button>
+
+        <button type="button" class="section-next app-button" disabled>
+          Next
+        </button>
+
+      </div>
+
     </div>
 
+
+    <!-- =====================================================
+         REVIEW
+    ====================================================== -->
+
     <div class="form-section" id="review-section">
+
       <div class="form-fields">
+
         <table>
+
           <thead>
             <tr>
               <th>Record section</th>
@@ -291,12 +486,16 @@
               <th></th>
             </tr>
           </thead>
+
           <tbody>
+
             <tr>
               <td><strong>Identification and decision</strong></td>
               <td id="record-identification"></td>
               <td>
-                <button type="button" class="edit-record-control" data-target="decision-section">Edit</button>
+                <button type="button" class="edit-record-control" data-target="decision-section">
+                  Edit
+                </button>
               </td>
             </tr>
 
@@ -304,7 +503,9 @@
               <td><strong>Concern and next step</strong></td>
               <td id="record-concern"></td>
               <td>
-                <button type="button" class="edit-record-control" data-target="decision-section">Edit</button>
+                <button type="button" class="edit-record-control" data-target="decision-section">
+                  Edit
+                </button>
               </td>
             </tr>
 
@@ -312,7 +513,9 @@
               <td><strong>Evidence</strong></td>
               <td id="record-evidence"></td>
               <td>
-                <button type="button" class="edit-record-control" data-target="evidence-section">Edit</button>
+                <button type="button" class="edit-record-control" data-target="evidence-section">
+                  Edit
+                </button>
               </td>
             </tr>
 
@@ -320,7 +523,9 @@
               <td><strong>Consequence</strong></td>
               <td id="record-consequence"></td>
               <td>
-                <button type="button" class="edit-record-control" data-target="consequence-section">Edit</button>
+                <button type="button" class="edit-record-control" data-target="consequence-section">
+                  Edit
+                </button>
               </td>
             </tr>
 
@@ -328,7 +533,9 @@
               <td><strong>Four checks</strong></td>
               <td id="record-four-checks"></td>
               <td>
-                <button type="button" class="edit-record-control" data-target="check-section">Edit</button>
+                <button type="button" class="edit-record-control" data-target="check-section">
+                  Edit
+                </button>
               </td>
             </tr>
 
@@ -336,7 +543,9 @@
               <td><strong>Decision basis</strong></td>
               <td id="record-decision-basis"></td>
               <td>
-                <button type="button" class="edit-record-control" data-target="choose-section">Edit</button>
+                <button type="button" class="edit-record-control" data-target="choose-section">
+                  Edit
+                </button>
               </td>
             </tr>
 
@@ -344,53 +553,60 @@
               <td><strong>Conditions or proof</strong></td>
               <td id="record-conditions-proof"></td>
               <td>
-                <button type="button" class="edit-record-control" data-target="choose-section">Edit</button>
+                <button type="button" class="edit-record-control" data-target="choose-section">
+                  Edit
+                </button>
               </td>
             </tr>
 
             <tr>
               <td><strong>Record control</strong></td>
               <td id="record-control"></td>
-              <td>
-              </td>
+              <td></td>
             </tr>
+
           </tbody>
+
         </table>
+
 
         <button id="dk-generate-pdf-btn" type="submit" class="app-button">
           Generate PDF
         </button>
 
       </div>
+
     </div>
-
-
-
-    <div class="quiz-navigation">
-      <button id="wat-prevBtn" class="app-button">
-        Previous
-      </button>
-      <button id="wat-nextBtn" class="app-button">
-        Next
-      </button>
-    </div>
-
-
-
 
   </form>
 
-  <button type="button" id="dk-generate-pdf-btn">
-    Generate PDF
-  </button>
 
-  <a id="dk-view-pdf-btn" style="display:none;">
-    View PDF
-  </a>
+  <div class="form-section" id="success-section">
 
-  <a id="dk-download-btn" style="display:none;">
-    Download PDF
-  </a>
+    <div class="form-fields">
+
+      <h2>Decision Record Complete</h2>
+
+      <p>
+        Your Walk Away Decision Record has been generated.
+      </p>
+
+      <div class="section-navigation">
+
+        <a id="dk-view-pdf-btn" class="app-button" style="display:none;">
+          View PDF
+        </a>
+
+        <a id="dk-download-btn" class="app-button" style="display:none;">
+          Download PDF
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
 
   <script src="pdf-script.js"></script>
   <script src="script.js"></script>

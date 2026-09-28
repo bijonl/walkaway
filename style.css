@@ -146,7 +146,7 @@
     color: #104E75;
   }
 
-  .btn.disabled, .app-button.disabled {
+  .btn.disabled, .app-button.disabled, .app-button[disabled] {
     opacity: 0.5;
     pointer-events: none;
   }
@@ -238,13 +238,13 @@
     font-weight: bold;
 }
 
-/* .form-section {
+.form-section {
   display: none; 
 }
 
 .form-section.active-section {
   display: block; 
-} */
+}
 
 
 .form-section .form-fields .form-field {
@@ -322,4 +322,8 @@
 .quiz-navigation {
   display: flex; 
   justify-content: space-between;
+}
+
+#success-section, h1 {
+  text-align: center;
 }
