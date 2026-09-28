@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="style.css">
 <script src="https://cdn.jsdelivr.net/npm/pdfkit@0.19.1/js/pdfkit.standalone.min.js"></script>
 
+
+
 <div id="dk-app" class="deal-killers-app">
 
   <form id="dk-form">
@@ -12,36 +14,36 @@
           <label>
             <span class="field-label">Decision / Deal name</span>
             <input type="text" id="wat-dealReference" name="dealReference" maxlength="200"
-              placeholder="Oak Ridge Apts – Dallas TX – 198 units – $21.5M" required>
+              placeholder="Oak Ridge Apts – Dallas TX – 198 units – $21.5M">
           </label>
         </div>
 
         <div class="form-field">
           <label>
             <span class="field-label">Decision Owner</span>
-            <input type="text" id="wat-name" name="name" placeholder="you@company.com" required>
+            <input type="text" id="wat-name" name="email" placeholder="you@company.com">
           </label>
         </div>
 
         <div class="form-field">
           <label>
             <span class="field-label">Decision Date</span>
-            <input type="date" id="wat-date" name="date" required>
+            <input type="date" id="wat-date" name="date">
           </label>
         </div>
 
         <div class="form-field">
           <label>
             <span class="field-label">What Concerns You?</span>
-            <textarea id="wat-concern" name="concern" placeholder="What gives you pause about this decision?"
-              required></textarea>
+            <textarea id="wat-concern" name="concern"
+              placeholder="What gives you pause about this decision?"></textarea>
           </label>
         </div>
 
         <div class="form-field">
           <label>
             <span class="field-label">What will you commit to next if you continue?</span>
-            <textarea id="wat-commit" name="commit" placeholder="What will you commit to?" required></textarea>
+            <textarea id="wat-commit" name="commit" placeholder="What will you commit to?"></textarea>
           </label>
         </div>
 
@@ -58,15 +60,15 @@
           <label>
             <span class="field-label">What facts support taking that next step?</span>
             <textarea id="wat-supporting-facts" name="supportingFacts"
-              placeholder="What facts support taking that next step?" required></textarea>
+              placeholder="What facts support taking that next step?"></textarea>
           </label>
         </div>
 
         <div class="form-field">
           <label>
             <span class="field-label">What facts argue against it?</span>
-            <textarea id="wat-opposing-facts" name="opposingFacts" placeholder="What facts argue against it?"
-              required></textarea>
+            <textarea id="wat-opposing-facts" name="opposingFacts"
+              placeholder="What facts argue against it?"></textarea>
           </label>
         </div>
 
@@ -74,7 +76,7 @@
           <label>
             <span class="field-label">What important facts are still missing or unverified?</span>
             <textarea id="wat-missing-facts" name="missingFacts"
-              placeholder="What important facts are still missing or unverified?" required></textarea>
+              placeholder="What important facts are still missing or unverified?"></textarea>
           </label>
         </div>
       </div>
@@ -90,7 +92,7 @@
         <div class="form-field">
           <label>
             <span class="field-label">What facts support taking that next step?</span>
-            <textarea id="wat-consequence" name="consequence" placeholder="Consequence?" required></textarea>
+            <textarea id="wat-consequence" name="consequence" placeholder="Consequence?"></textarea>
           </label>
         </div>
       </div>
@@ -109,7 +111,7 @@
 
           <div class="radio-group">
             <label>
-              <input type="radio" name="evidenceEnough" value="adequate" required>
+              <input type="radio" name="evidenceEnough" value="adequate">
               <span>Adequate</span>
             </label>
 
@@ -136,7 +138,7 @@
 
           <div class="radio-group">
             <label>
-              <input type="radio" name="wrongConsequence" value="understood" required>
+              <input type="radio" name="wrongConsequence" value="understood">
               <span>Understood</span>
             </label>
 
@@ -165,7 +167,7 @@
 
           <div class="radio-group">
             <label>
-              <input type="radio" name="undoability" value="high" required>
+              <input type="radio" name="undoability" value="high">
               <span>High</span>
             </label>
 
@@ -194,7 +196,7 @@
 
           <div class="radio-group">
             <label>
-              <input type="radio" name="momentum" value="low" required>
+              <input type="radio" name="momentum" value="low">
               <span>Low</span>
             </label>
 
@@ -227,7 +229,7 @@
 
           <div class="radio-group">
             <label>
-              <input type="radio" name="decision" value="stop" required>
+              <input type="radio" name="decision" value="stop">
               <span>Stop</span>
             </label>
 
@@ -247,34 +249,33 @@
         <div class="form-field" id="decision-ff">
           <label>
             <span class="field-label">Why is this the right decision now?</span>
-            <textarea id="wat-decision" name="decision-right-now" placeholder="Why?" required></textarea>
+            <textarea id="wat-decision" name="decision-right-now" placeholder="Why?"></textarea>
           </label>
         </div>
 
         <div class="form-field" style="display:none" id="conditions-ff">
           <label>
             <span class="field-label">What conditions apply to continuing?</span>
-            <textarea id="wat-conditions" name="conditions" placeholder="Conditions?" required></textarea>
+            <textarea id="wat-conditions" name="conditions" placeholder="Conditions?"></textarea>
           </label>
         </div>
 
         <div class="form-field" style="display:none" id="what-proof-ff">
           <label>
             <span class="field-label">What proof or action is needed?</span>
-            <input type="text" id="wat-proof" name="proof" placeholder="What proof or action is needed?"
-              required></input>
+            <input type="text" id="wat-proof" name="proof" placeholder="What proof or action is needed?"></input>
           </label>
         </div>
         <div class="form-field" style="display:none" id="who-proof-ff">
           <label>
             <span class="field-label">Who will obtain it?</input>
-              <input type="text" id="wat-who-obtain" name="proof" placeholder="Who will obtain it?" required></input>
+              <input type="text" id="wat-who-obtain" name="whoObtain" placeholder="Who will obtain it?"></input>
           </label>
         </div>
         <div class="form-field" style="display:none" id="when-proof-ff">
           <label>
             <span class="field-label">By when?</span>
-            <input type="text" id="wat-when-obtain" name="proof" placeholder="By when?" required></text>
+            <input type="text" id="wat-when-obtain" name="whenObtain" placeholder="By when?"></text>
           </label>
         </div>
       </div>
@@ -356,8 +357,8 @@
           </tbody>
         </table>
 
-        <button id="dk-submitBtn" type="submit" class="app-button">
-          Submit
+        <button id="dk-generate-pdf-btn" type="submit" class="app-button">
+          Generate PDF
         </button>
 
       </div>
@@ -377,5 +378,19 @@
 
 
 
+  </form>
 
-    <script src="script.js"></script>
+  <button type="button" id="dk-generate-pdf-btn">
+    Generate PDF
+  </button>
+
+  <a id="dk-view-pdf-btn" style="display:none;">
+    View PDF
+  </a>
+
+  <a id="dk-download-btn" style="display:none;">
+    Download PDF
+  </a>
+
+  <script src="pdf-script.js"></script>
+  <script src="script.js"></script>

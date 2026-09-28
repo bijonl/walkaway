@@ -238,13 +238,13 @@
     font-weight: bold;
 }
 
-.form-section {
+/* .form-section {
   display: none; 
 }
 
 .form-section.active-section {
   display: block; 
-}
+} */
 
 
 .form-section .form-fields .form-field {
