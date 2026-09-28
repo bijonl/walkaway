@@ -1,329 +1,174 @@
 .deal-killers-app {
-    max-width: 920px;
-    margin: 0 auto;
-    font-family: inherit;
-  }
-
-  /* .deal-killers-app h1 {
-    font-size: 2.1rem;
-    margin-bottom: 24px;
-    color: #1e2937;
-  } */
-
-  .form-section {
-    margin-bottom: 42px;
-  }
-
-  .form-section h2 {
-    color: #104E75;
-    font-size: 1.45rem;
-    margin-bottom: 16px;
-  }
-
-  .field-label {
-    font-weight: 600;
-    margin-bottom: 6px;
-    display: block;
-    color: #1e2937;
-  }
-
-  .deal-killers-app input,
-  .deal-killers-app textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border: 2px solid #e2e8f0;
-    border-radius: 10px;
-    font-size: 1.05rem;
-    box-sizing: border-box;
-  }
-
-
-
-  .filters-grid {
-    display: grid;
-    gap: 18px;
-  }
-
-  .filter-card {
-    background: white;
-    border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 20px;
-  }
-
-  .radio-row {
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-
-  .radio-row label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    font-weight: 500;
-  }
-
-  .radio-row input {
-    width: auto;
-  }
-
- .app-button {
-    background: #104E75;
-    color: white;
-    padding: 16px 48px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border: none;
-    border-radius: 9999px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-
-  .output-actions {
-    gap: 15px; 
-  }
-
-  #dk-view-pdf-btn {
-      background: #fff;
-      color: #104E75;
-      border: 2px solid #104E75;
-  }
-
-  #dk-view-pdf-btn:hover {
-      background: #104E75;
-      color: #fff;
-      border: 2px solid #104E75;
-      transform: translateY(-1px);
-  }
-
-  #dk-download-btn:hover {
-    background: #12649c;
-    border-color: #12649c;
-    transform: translateY(-1px);
-    transition: all 0.2s ease;
-  }
-  
-
-  #dk-submitBtn[disabled] {
-    opacity: 0.65;
-    cursor: not-allowed;
-  }
-
-  #dk-status {
-    margin-top: 16px;
-    font-weight: 600;
-    color: #104E75;
-  }
-
-  .success-screen {
-    text-align: center;
-    padding: 60px 20px;
-  }
-
-  .success-screen h2 {
-    color: #104E75;
-    margin-bottom: 12px;
-  }
-
-  .output-actions {
-    margin: 35px 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .btn {
-    padding: 14px 32px;
-    border-radius: 9999px;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    min-width: 220px;
-    text-align: center;
-    border: 2px solid #104E75;
-    color: #104E75;
-  }
-
-  .btn.disabled, .app-button.disabled, .app-button[disabled] {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-
-.pass-color {
-    color: green; 
+  max-width: 920px;
+  margin: 0 auto;
+  font-family: inherit;
 }
 
-.fail-color {
-    color: red; 
+h1 {
+  text-align: center;
 }
 
-.success-title {
-    font-size: 48px; 
-    color: #104E75; 
-}
-
-.output-determination {
-    padding: 25px; 
-    background-color: lightgray; 
-    h2 {
-        margin: 0; 
-    }
-}
-
-.deal-information-wrapper {
-    font-size: 20px; 
-    padding-bottom: 30px; 
-}
-
-
-.dk-results-table {
-    font-size: 18px;
-    margin-top: 30px;  
-    border: solid 1px black; 
-    thead {
-        tr {
-            background-color: #104E75; 
-            color: white; 
-            th {
-                font-size: 32px; 
-                padding: 15px; 
-            }
-        }
-      
-    }
-    td {
-        border: solid 1px black; 
-    }
-    .filter-question {
-        width: 60%; 
-        padding: 15px; 
-    }
-    .filter-result {
-        width: 40%; 
-        text-align: center;
-
-    }
-}
-
-.unverifiable-color {
-    color: gray; 
-}
-
-.pass-bg {
-    background: #dff5e5;
-    color: #187a36;
-}
-
-.fail-bg {
-    background: #fbdcdc;
-    color: #a52222;
-}
-
-.unverified-bg {
-    background: #fff1c7;
-    color: #8a6500; 
-}
-
-.output-summary {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    font-size: 20px;
-    border: solid;
-    border-radius: 10px;
-    align-items: center;
-    margin-bottom: 30px;
-    font-weight: bold;
-}
+/* Form sections */
 
 .form-section {
-  display: none; 
+  display: none;
+  margin-bottom: 42px;
 }
 
 .form-section.active-section {
-  display: block; 
+  display: block;
 }
 
+.form-section h2 {
+  color: #104E75;
+  font-size: 1.45rem;
+  margin-bottom: 16px;
+}
 
 .form-section .form-fields .form-field {
-  padding-bottom: 25px; 
+  padding-bottom: 25px;
 }
 
-.form-field .radio-group  {
-  display: inline-flex; 
+/* Form fields */
+
+.field-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #1e2937;
+}
+
+.deal-killers-app input,
+.deal-killers-app textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  box-sizing: border-box;
+}
+
+.form-field .field-description {
+  margin-top: 0;
+  font-style: italic;
+}
+
+/* Radio groups */
+
+.form-field .radio-group {
   display: flex;
   justify-content: space-between;
   width: 50%;
 }
 
 .form-field .radio-group label {
-  display: flex; 
+  display: flex;
   align-items: center;
   white-space: nowrap;
-
 }
 
 .form-field .radio-group label input {
-  margin: 0; 
-  margin-right: 5px;
+  width: auto;
+  margin: 0 5px 0 0;
 }
 
 .form-field .radio-group label span {
   text-transform: capitalize;
 }
 
-.form-field .field-description {
-  margin-top: 0; 
-  font-style: italic;
+/* Check and decision sections */
+
+#check-section .form-field,
+#choose-section .form-field {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  box-sizing: border-box;
+  margin-bottom: 30px;
 }
 
-#check-section .form-field, 
-#choose-section .form-field
-{
-    width: 100%;
-    padding: 14px 16px;
-    border: 2px solid #e2e8f0;
-    border-radius: 10px;
-    font-size: 1.05rem;
-    box-sizing: border-box;
-    margin-bottom: 30px; 
+/* Buttons */
+
+.app-button {
+  background: #104E75;
+  color: white;
+  padding: 16px 48px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  margin-top: 20px!important;
 }
 
-#justify-ff {
-  margin-top: 20px; 
+.app-button:hover {
+  background: #12649c;
 }
 
-#review-section table {
-  border: solid 1px black; 
+.app-button[disabled],
+.app-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
-#review-section table {
-  border: solid 1px black; 
-}
-
-#review-section table thead tr th {
-  border: solid 1px black; 
-}
-
-#review-section table tbody tr td {
-  border: solid 1px black; 
-  padding: 5px; 
-}
-
-.edit-record-control { 
-    background: transparent;
-    border: 0;
-    color: #104E75;
-    text-decoration: underline;
-}
-
-.quiz-navigation {
-  display: flex; 
+.section-navigation {
+  display: flex;
   justify-content: space-between;
 }
 
-#success-section, h1 {
+/* Review */
+
+#review-section table {
+  border: solid 1px black;
+}
+
+#review-section table thead tr th {
+  border: solid 1px black;
+}
+
+#review-section table tbody tr td {
+  border: solid 1px black;
+  padding: 5px;
+}
+
+.edit-record-control {
+  background: transparent;
+  border: 0;
+  color: #104E75;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Success */
+
+#success-section {
   text-align: center;
 }
+
+#success-section .section-navigation {
+  justify-content: center;
+  gap: 15px;
+}
+
+#dk-view-pdf-btn {
+  background: #fff;
+  color: #104E75;
+  border: 2px solid #104E75;
+}
+
+#dk-view-pdf-btn:hover {
+  background: #104E75;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+#dk-download-btn:hover {
+  background: #12649c;
+  border-color: #12649c;
+  transform: translateY(-1px);
+}
+

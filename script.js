@@ -447,10 +447,10 @@ function updateFourChecks() {
     }
 
     recordFourChecks.innerHTML = `
-        Evidence Sufficiency: ${evidenceText} <br>
-        Consequence Clarity: ${consequenceText} <br>
-        Reversibility and Momentum: ${reversibilityText} <br>
-        Sunk-Cost Pressure: ${sunkCostText}
+        Evidence Sufficiency: ${evidenceText.toUpperCase} <br>
+        Consequence Clarity: ${consequenceText.toUpperCase} <br>
+        Reversibility and Momentum: ${reversibilityText.toUpperCase} <br>
+        Sunk-Cost Pressure: ${sunkCostText.toUpperCase}
     `;
 }
 
@@ -1309,7 +1309,7 @@ function createPDFFourChecks(doc, formData, recordId) {
     const momentum = formData.get('momentum'); 
     const undoability = formData.get('undoability'); 
     const decisionRightNow = formData.get('decision-right-now'); 
-    const conditions = formData('conditions');  
+    const conditions = formData.get('conditions');  
 
 
     doc.addPage(); 
@@ -1358,10 +1358,10 @@ function createPDFFourChecks(doc, formData, recordId) {
 
 
     const rows = [
-        ['Evidence Sufficiency', evidenceEnough],
-        ['Consequence Clarity', wrongConsequence],
-        ['Reversibility', undoability],
-        ['Momentum / Sunk-Cost Pressure', momentum]
+        ['Evidence Sufficiency', evidenceEnough.toUpperCase()],
+        ['Consequence Clarity', wrongConsequence.toUpperCase().replace('-', ' ')],
+        ['Reversibility', undoability.toUpperCase()],
+        ['Momentum / Sunk-Cost Pressure', momentum.toUpperCase()]
     ];
 
 
